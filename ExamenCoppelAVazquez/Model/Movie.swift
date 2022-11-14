@@ -7,20 +7,39 @@
 
 import Foundation
 
-struct pelicula: Codable{
-    var movie: [results]
-}
-
-struct results : Codable{
-    var poster_path: String
-    //var adult: DarwinBoolean
-    //var overview: String
-    //var release_date: String
-    //var genre_ids: Array<Any>
-    //var id: Int
-    //var original_title: String
-    //var original_languaje: String
-    //var title: String
-   // var backdrop_path: String!
+struct Movie: Codable {
+    let adult: Bool
+    let backdropPath: String
+    let budget: Int
+    let genres: [Genre]
+    let homepage: String
+    let id: Int
+    let imdbID, originalLanguage, originalTitle, overview: String
+    let popularity: Double
+    let posterPath: String
+    let productionCompanies: [ProductionCompany]
+    let productionCountries: [ProductionCountry]
+    let releaseDate: String
+    let revenue, runtime: Int
+    let status, tagline, title: String
+    let video: Bool
+    let voteAverage: Double
+    let voteCount: Int
+    }
+    struct BelongsToCollection: Codable {
+        let id: Int
+        let name, posterPath, backdropPath: String
+    }
+    struct Genre: Codable {
+        let id: Int
+        let name: String
+    }
     
-}
+    struct ProductionCompany: Codable {
+        let id: Int
+        let logoPath: String
+        let name, originCountry: String
+    }
+    struct ProductionCountry: Codable {
+        let iso3166_1, name: String
+    }

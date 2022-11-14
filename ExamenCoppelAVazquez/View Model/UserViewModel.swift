@@ -1,0 +1,39 @@
+//
+//  PostLogin.swift
+//  ExamenCoppelAVazquez
+//
+//  Created by Digis01 Soluciones Digitales on 12/11/22.
+//
+
+import Foundation
+
+class UserViewModel {
+    
+        var requestToken = RequestToken(success: false, request_token: "", expires_at: "")
+        
+        func Login(user: User, Logear: @escaping (RequestToken?, Error?) -> Void){
+            do{
+                let decoder = JSONDecoder()
+                let baseURL = "https://api.themoviedb.org/3/authentication/guest_session/new?api_key=acd2646bc68e6b8550024d0531803ef8"
+                let url = URL(string: baseURL)
+                var urlRequest = URLRequest(url: url!)
+                urlRequest.httpMethod = "POST"
+                urlRequest.addValue("aplication/json", forHTTPHeaderField: "Content-Type")
+                urlRequest.httpBody = try! JSONEncoder().encode(user)
+                
+                
+                let urlSession = URLSession.shared
+                let task = urlSession.dataTask(with: urlRequest){ data, response, error in
+                    guard let data = data else {
+                        return
+                    }
+                    print("Data \(String(describing: data))")
+                    let datajson = try? JSONSerialization.jsonObject(with: data)
+                    self.requestToken = try! decoder.decode(RequestToken.self, from: data)
+                    Logear(self.requestToken, nil)
+                    
+                }.resume()
+            }
+        }
+    }
+
