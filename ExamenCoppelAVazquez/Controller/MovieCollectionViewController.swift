@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MovieCollectionViewController: UICollectionViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,5 +86,10 @@ class MovieCollectionViewController: UICollectionViewController {
     
     }
     */
-
+    
+    
+    @IBAction func PopularMovie(_ sender: UIBarButtonItem) {
+        
+    }
+    
 }

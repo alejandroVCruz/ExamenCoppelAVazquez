@@ -42,16 +42,21 @@ class ViewController: UIViewController {
 //}))
         let userViewModel = UserViewModel()
         userViewModel.Login(user: user!) { result, data in
-            //validar Succes y si es true //Realizar segues a view movies
-            if userViewModel.requestToken.success {
-                let alert = UIAlertController(title: "SUCCESS FALSE", message: "HUBO UN ERROR A LA HORA DE INGRESAR", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }else{
-                let alert = UIAlertController(title: "DATOS CORRECTOS", message: "BIENVENIDO", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                self.performSegue(withIdentifier: "MOVIE", sender: self)
+            DispatchQueue.main.async {
+                //validar Succes y si es true //Realizar segues a view movies
+        
+                if userViewModel.requestToken.success {
+                    let alert = UIAlertController(title: "DATOS CORRECTOS", message: "BIENVENIDO", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.performSegue(withIdentifier: "MOVIE", sender: self)
+                    
+                }else{
+                    let alert = UIAlertController(title: "SUCCESS FALSE", message: "HUBO UN ERROR A LA HORA DE INGRESAR", preferredStyle: UIAlertController.Style.alert)
+                                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                                        self.present(alert, animated: true, completion: nil)
+                }
             }
+
                 
             }
         }

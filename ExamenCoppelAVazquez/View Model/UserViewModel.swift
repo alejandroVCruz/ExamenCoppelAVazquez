@@ -27,7 +27,6 @@ class UserViewModel {
                         return
                     }
                     print("Data \(String(describing: data))")
-                    let datajson = try? JSONSerialization.jsonObject(with: data)
                     self.requestToken = try! decoder.decode(RequestToken.self, from: data)
                     Logear(self.requestToken, nil)
                     
