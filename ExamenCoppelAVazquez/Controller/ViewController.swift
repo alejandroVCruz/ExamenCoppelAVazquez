@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var Contraseña: UITextField!
     
+    @IBOutlet weak var BotonMostrarContraseña: UIButton!
+    
+    
     
     private var requestTokenViewModel = RequestTokenViewModel()
     private var sessionIdViewModel = SessionIdViewModel()
@@ -72,6 +75,16 @@ class ViewController: UIViewController {
             self.requestToken = object
         }
     }
+    
+    // MARK: - User actions
+    //-------------------------------------------------------------------------------------------------------------------------------------------
+    @IBAction func actionHideShowPassword(_ sender: Any) {
+
+        BotonMostrarContraseña.isSelected = !BotonMostrarContraseña.isSelected
+        Contraseña.isSecureTextEntry = !BotonMostrarContraseña.isSelected
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------
    // func GenerarId(){
        // sessionIdViewModel.GetSessionId { object1, error in
          //   guard let _ = object1 else {

@@ -28,7 +28,7 @@
 		EFFC90D82922AA7900F9BE25 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90D72922AA7900F9BE25 /* MovieViewModel.swift */; };
 		EFFC90DA2922AA8200F9BE25 /* RequestTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90D92922AA8200F9BE25 /* RequestTokenViewModel.swift */; };
 		EFFC90DC2922AA9E00F9BE25 /* SessionIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90DB2922AA9E00F9BE25 /* SessionIdViewModel.swift */; };
-		EFFC90DE2922B15D00F9BE25 /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90DD2922B15D00F9BE25 /* MovieCollectionViewController.swift */; };
+		EFFC90DE2922B15D00F9BE25 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90DD2922B15D00F9BE25 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		EFFC90D72922AA7900F9BE25 /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		EFFC90D92922AA8200F9BE25 /* RequestTokenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTokenViewModel.swift; sourceTree = "<group>"; };
 		EFFC90DB2922AA9E00F9BE25 /* SessionIdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionIdViewModel.swift; sourceTree = "<group>"; };
-		EFFC90DD2922B15D00F9BE25 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
+		EFFC90DD2922B15D00F9BE25 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		EFD01B7F291EE72D00F10DD2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EFFC90DD2922B15D00F9BE25 /* MovieCollectionViewController.swift */,
+				EFFC90DD2922B15D00F9BE25 /* MovieViewController.swift */,
 				EFD01B6B291EE45700F10DD2 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFFC90DE2922B15D00F9BE25 /* MovieCollectionViewController.swift in Sources */,
+				EFFC90DE2922B15D00F9BE25 /* MovieViewController.swift in Sources */,
 				EFFC90DC2922AA9E00F9BE25 /* SessionIdViewModel.swift in Sources */,
 				EFD01B6C291EE45700F10DD2 /* ViewController.swift in Sources */,
 				EFFC90C42922AA2E00F9BE25 /* RequestToken.swift in Sources */,
