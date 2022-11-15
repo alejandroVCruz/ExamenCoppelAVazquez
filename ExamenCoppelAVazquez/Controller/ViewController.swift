@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             guard let contraseña = self.Contraseña.text else {print("Contraseña no valida"); return}
             guard let token = self.requestToken?.request_token else{return}
             
-            user = User(username: usuario, password: contraseña, requestToken: token)
+            user = User(username: usuario, password: contraseña, request_token: token)
            
 //}))
         let userViewModel = UserViewModel()
