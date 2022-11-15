@@ -59,6 +59,19 @@ extension MovieViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
         let movie: Movie = movies!.results![indexPath.row]
+        
+        if let url = URL( string:("https://image.tmdb.org/t/p/w1280" + (movies?.results?[indexPath.row].posterPath)!))
+        {
+            DispatchQueue.global().async {
+              if let data = try? Data( contentsOf:url)
+              {
+                DispatchQueue.main.async {
+                    cell.Imagen.image = UIImage( data:data)
+                }
+              }
+           }
+        }
+
         cell.Titulo.text = movie.title
         cell.Fecha.text = movie.releaseDate
         //cell.Calificacion.text = movie.voteAverage

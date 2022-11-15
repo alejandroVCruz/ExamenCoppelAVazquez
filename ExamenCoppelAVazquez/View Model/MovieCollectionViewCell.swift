@@ -9,6 +9,7 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    
     @IBOutlet weak var Imagen: UIImageView!
     
     @IBOutlet weak var Titulo: UILabel!
@@ -19,11 +20,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var Descripcion: UILabel!
     
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
 
 }

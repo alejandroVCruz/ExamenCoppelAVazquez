@@ -78,11 +78,12 @@ class ViewController: UIViewController {
     
     // MARK: - User actions
     //-------------------------------------------------------------------------------------------------------------------------------------------
-    @IBAction func actionHideShowPassword(_ sender: Any) {
-
+    @IBAction func MostrarContrasena(_ sender: UIButton) {
         BotonMostrarContraseña.isSelected = !BotonMostrarContraseña.isSelected
         Contraseña.isSecureTextEntry = !BotonMostrarContraseña.isSelected
+    
     }
+
 
     //-------------------------------------------------------------------------------------------------------------------------------------------
    // func GenerarId(){
