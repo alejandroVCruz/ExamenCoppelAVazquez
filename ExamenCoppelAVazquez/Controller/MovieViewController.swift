@@ -21,6 +21,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
+        collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil),forCellWithReuseIdentifier: "MovieCollectionViewCell")
     }
@@ -52,7 +53,7 @@ extension MovieViewController : UICollectionViewDataSource{
    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movies!.results!.count
+        movies?.results?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
