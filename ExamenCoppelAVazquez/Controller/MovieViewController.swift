@@ -16,6 +16,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
     private var movieViewModel = MovieViewModel()
     private var movies : Movies?
     private var movie : [Movie] = []
+    private var idMovie : Int?
     
 
     override func viewDidLoad() {
@@ -56,10 +57,16 @@ extension MovieViewController : UICollectionViewDataSource{
         movies?.results?.count ?? 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        self.idMovie = movies!.results![indexPath.row].id
+        self.performSegue(withIdentifier: "DetalleMovie", sender: self)
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
-        let movie: Movie = movies!.results![indexPath.row]
         
+        let movie: Movie = movies!.results![indexPath.row]
         if let url = URL( string:("https://image.tmdb.org/t/p/w1280" + (movies?.results?[indexPath.row].posterPath)!))
         {
             DispatchQueue.global().async {
@@ -74,11 +81,25 @@ extension MovieViewController : UICollectionViewDataSource{
 
         cell.Titulo.text = movie.title
         cell.Fecha.text = movie.releaseDate
-        //cell.Calificacion.text = movie.voteAverage
+        cell.Lenguaje.text = movie.originalLanguage
         cell.Descripcion.text = movie.overview
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetalleMovie"{
+            var detalleMovieController = segue.destination as? DetallesMovieViewController
+            detalleMovieController?.IdMovie = self.idMovie!
+          }
+       }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let indexPath = collectionView.indexPathsForSelectedItems{//indexPathForSelectedRow{
+//            let selectedRow = indexPath.row
+//            let detailVC = segue.destination as! ParkDetailTable
+//            detailVC.park = self.parksArray[selectedRow]
+//        }
+//    }
 
 }
 

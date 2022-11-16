@@ -16,7 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var Fecha: UILabel!
     
-    @IBOutlet weak var Calificacion: UILabel!
+    @IBOutlet weak var Lenguaje: UILabel!
     
     @IBOutlet weak var Descripcion: UILabel!
     

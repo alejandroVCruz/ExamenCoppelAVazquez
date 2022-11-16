@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EF23C055291F2ECB00D63EA8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF23C054291F2ECB00D63EA8 /* Movie.swift */; };
+		EF6AB5D729245775003D1E39 /* DetallesMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6AB5D629245775003D1E39 /* DetallesMovieViewController.swift */; };
+		EF6AB5DB29245B76003D1E39 /* DetailsMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6AB5DA29245B76003D1E39 /* DetailsMovieViewModel.swift */; };
 		EFD01B68291EE45700F10DD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD01B67291EE45700F10DD2 /* AppDelegate.swift */; };
 		EFD01B6A291EE45700F10DD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD01B69291EE45700F10DD2 /* SceneDelegate.swift */; };
 		EFD01B6C291EE45700F10DD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD01B6B291EE45700F10DD2 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		EF23C054291F2ECB00D63EA8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EF6AB5D629245775003D1E39 /* DetallesMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesMovieViewController.swift; sourceTree = "<group>"; };
+		EF6AB5DA29245B76003D1E39 /* DetailsMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewModel.swift; sourceTree = "<group>"; };
 		EFD01B64291EE45700F10DD2 /* ExamenCoppelAVazquez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamenCoppelAVazquez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD01B67291EE45700F10DD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFD01B69291EE45700F10DD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			children = (
 				EFFC90DD2922B15D00F9BE25 /* MovieViewController.swift */,
 				EFD01B6B291EE45700F10DD2 /* ViewController.swift */,
+				EF6AB5D629245775003D1E39 /* DetallesMovieViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				EFFC90D72922AA7900F9BE25 /* MovieViewModel.swift */,
 				EFFC90D92922AA8200F9BE25 /* RequestTokenViewModel.swift */,
 				EFFC90DB2922AA9E00F9BE25 /* SessionIdViewModel.swift */,
+				EF6AB5DA29245B76003D1E39 /* DetailsMovieViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -222,9 +228,11 @@
 				EFFC90D82922AA7900F9BE25 /* MovieViewModel.swift in Sources */,
 				EFFC90CC2922AA5400F9BE25 /* UserViewModel.swift in Sources */,
 				EFFC90C82922AA3F00F9BE25 /* SessionId.swift in Sources */,
+				EF6AB5DB29245B76003D1E39 /* DetailsMovieViewModel.swift in Sources */,
 				EFD01B6A291EE45700F10DD2 /* SceneDelegate.swift in Sources */,
 				EFD01B72291EE45700F10DD2 /* ExamenCoppelAVazquez.xcdatamodeld in Sources */,
 				EFFC90D42922AA6B00F9BE25 /* CompaniasProductorasCell.swift in Sources */,
+				EF6AB5D729245775003D1E39 /* DetallesMovieViewController.swift in Sources */,
 				EFFC90DA2922AA8200F9BE25 /* RequestTokenViewModel.swift in Sources */,
 				EF23C055291F2ECB00D63EA8 /* Movie.swift in Sources */,
 				EFFC90CA2922AA4B00F9BE25 /* GetRequestToken.swift in Sources */,
