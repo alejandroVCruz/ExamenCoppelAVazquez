@@ -164,8 +164,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss8-Lg-22n">
-                                <rect key="frame" x="0.0" y="56" width="393" height="293"/>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss8-Lg-22n">
+                                <rect key="frame" x="16" y="56" width="348" height="158"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5FA-iC-PZs">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -242,23 +242,24 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstItem="5FA-iC-PZs" firstAttribute="leading" secondItem="ss8-Lg-22n" secondAttribute="leading" id="0E6-Ta-e3U"/>
-                                    <constraint firstAttribute="bottom" secondItem="5FA-iC-PZs" secondAttribute="bottom" constant="193" id="BeH-17-ZRG"/>
+                                    <constraint firstAttribute="bottom" secondItem="5FA-iC-PZs" secondAttribute="bottom" constant="58" id="BeH-17-ZRG"/>
                                     <constraint firstItem="ilD-Pm-oob" firstAttribute="leading" secondItem="ss8-Lg-22n" secondAttribute="leading" constant="91" id="CdL-cC-1wG"/>
                                     <constraint firstItem="5FA-iC-PZs" firstAttribute="top" secondItem="ss8-Lg-22n" secondAttribute="top" id="YDk-OD-Z3s"/>
-                                    <constraint firstAttribute="trailing" secondItem="ilD-Pm-oob" secondAttribute="trailing" constant="122" id="fKb-L2-gOJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ilD-Pm-oob" secondAttribute="trailing" constant="77" id="fKb-L2-gOJ"/>
                                     <constraint firstItem="5FA-iC-PZs" firstAttribute="centerY" secondItem="ilD-Pm-oob" secondAttribute="centerY" id="rvK-55-Ht0"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vIp-Qf-QXP"/>
                         <constraints>
-                            <constraint firstItem="gvI-QL-2M0" firstAttribute="top" secondItem="ss8-Lg-22n" secondAttribute="bottom" constant="-139" id="2Ly-RY-rno"/>
-                            <constraint firstItem="ss8-Lg-22n" firstAttribute="centerX" secondItem="Ytc-Su-U2o" secondAttribute="centerX" id="3wy-Fo-ycc"/>
+                            <constraint firstItem="gvI-QL-2M0" firstAttribute="top" secondItem="ss8-Lg-22n" secondAttribute="bottom" constant="-4" id="2Ly-RY-rno"/>
+                            <constraint firstItem="ss8-Lg-22n" firstAttribute="centerX" secondItem="Ytc-Su-U2o" secondAttribute="centerX" constant="-6.5" id="3wy-Fo-ycc"/>
                             <constraint firstItem="ss8-Lg-22n" firstAttribute="top" secondItem="vIp-Qf-QXP" secondAttribute="top" id="8ZP-Yk-Dnv"/>
-                            <constraint firstItem="ss8-Lg-22n" firstAttribute="trailing" secondItem="vIp-Qf-QXP" secondAttribute="trailing" id="R8s-mB-e9D"/>
-                            <constraint firstItem="ss8-Lg-22n" firstAttribute="leading" secondItem="vIp-Qf-QXP" secondAttribute="leading" id="Zi2-1K-nCO"/>
+                            <constraint firstItem="ss8-Lg-22n" firstAttribute="trailing" secondItem="vIp-Qf-QXP" secondAttribute="trailing" constant="-29" id="R8s-mB-e9D"/>
+                            <constraint firstItem="ss8-Lg-22n" firstAttribute="leading" secondItem="vIp-Qf-QXP" secondAttribute="leading" constant="16" id="Zi2-1K-nCO"/>
                             <constraint firstItem="vIp-Qf-QXP" firstAttribute="trailing" secondItem="gvI-QL-2M0" secondAttribute="trailing" constant="29" id="aEy-HC-ull"/>
                             <constraint firstItem="gvI-QL-2M0" firstAttribute="leading" secondItem="vIp-Qf-QXP" secondAttribute="leading" constant="16" id="bk4-lF-9fP"/>
                             <constraint firstItem="vIp-Qf-QXP" firstAttribute="bottom" secondItem="gvI-QL-2M0" secondAttribute="bottom" constant="169" id="hEe-ul-4pd"/>
@@ -532,6 +533,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

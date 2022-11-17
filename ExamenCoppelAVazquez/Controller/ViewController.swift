@@ -54,19 +54,17 @@ class ViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.performSegue(withIdentifier: "MOVIE", sender: self)
                     
+                    UserDefaults.standard.set(userViewModel.requestToken.request_token, forKey:"requestToken")
+                    UserDefaults.standard.synchronize()
+                    
                 }else{
                     let alert = UIAlertController(title: "SUCCESS FALSE", message: "HUBO UN ERROR A LA HORA DE INGRESAR", preferredStyle: UIAlertController.Style.alert)
                                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                                         self.present(alert, animated: true, completion: nil)
                 }
             }
-
-                
             }
         }
-        
-    
-    
     func GenerarToken(){
         requestTokenViewModel.GetRequestToken { object, error in
             guard let _ = object else {
@@ -97,12 +95,12 @@ class ViewController: UIViewController {
         //}
     //}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetalleMovie"{
-            var perfil = segue.destination as? PerfilViewController
-            perfil?.requestToken = self.requestToken?.request_token
+        if segue.identifier == "MOVIE"{
+            //var movieViewController = segue.destination as? MovieViewController
+            //movieViewController?.requestToken = self.requestToken?.request_token
           }
        }
 
 }
 
-
+	

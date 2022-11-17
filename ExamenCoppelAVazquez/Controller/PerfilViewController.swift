@@ -25,47 +25,67 @@ class PerfilViewController: UIViewController, UICollectionViewDelegate {
     private var sessionId : SessionId?
     //---------------------------------------------------------
     private var perfil : Perfil?
-    private var IdSession : Int?
+    private var IdSession : String?
     
     //--------------------------------------------------------
     private var movieViewModel = MovieViewModel()
     private var movies : Movies?
+    private var movie : Movie?
     //---------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        //GenerarId()
+        loadData()
         
-        movieViewModel.GetFavoriteMovies { movies, error in
-            self.movies = movies
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+        
+        
+    }
+    
+    func loadData(){
+        //-----------------------------------------------------------------------------
+        var idUser : Session?
+        
+        guard let token = UserDefaults.standard.object(forKey: "requestToken") as? String else{
+            return
         }
+        idUser = Session(request_token: token)
+        let sessionIdViewModel = SessionIdViewModel()
+        //print(perfil.requestToken)
+        sessionIdViewModel.PostSessionId(requestToken: idUser!) { sessionId, error in
+            DispatchQueue.main.async{
+            //validar Succes y si es true //Realizar segues a view movies
+                
+                self.IdSession = sessionId?.session_id
+                
+                self.loadData2()
+                
+        }
+        }
+        //sessionIdViewModel.PostSessionId(idSession:  IdSession!) { result, data in
+
+        
+    }
+    func loadData2(){
+        //---------------------------------------------------------------------------------
+            movieViewModel.GetFavoriteMovies(idSession: IdSession!) { movies, error in
+                self.perfil = movies
+                DispatchQueue.main.async {
+                    self.Nombre.text = self.perfil?.name
+                    self.Usuario.text = self.perfil?.username
+                    
+                    //3er servicio de favoritos
+                   
+                }
+            }
+        
+    }
+    
+    func loadData3(){
+        self.collectionView.reloadData()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil),forCellWithReuseIdentifier: "MovieCollectionViewCell")
         //-----------------------------------------------------------------
-        
-        var idUser : Session?
-        guard let token = self.requestToken else{return}
-        
-        idUser = Session(request_token: token)
-
-    let sessionIdViewModel = SessionIdViewModel()
-        sessionIdViewModel.PostSessionId(idSession:  IdSession!) { result, data in
-            DispatchQueue.main.async{
-            //validar Succes y si es true //Realizar segues a view movies
-                //self.Titulo.text = movie?.title
-                //self.Nombre.text =
-            
-    
-        }
-
-            
-        }
-        
-
     }
     
 }

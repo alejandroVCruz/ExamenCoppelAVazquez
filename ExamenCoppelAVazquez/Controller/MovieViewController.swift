@@ -17,6 +17,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
     
     @IBOutlet weak var TopRated: UIButton!
     
+    var requestToken : String?
     
     private var movieViewModel = MovieViewModel()
     private var movies : Movies?
