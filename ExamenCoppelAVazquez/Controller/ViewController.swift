@@ -18,10 +18,10 @@ class ViewController: UIViewController {
     
     
     private var requestTokenViewModel = RequestTokenViewModel()
-    private var sessionIdViewModel = SessionIdViewModel()
+    
     
     private var requestToken : RequestToken?  // TODO PROYECTO - NECESITA SER GUARDADO EN UN KEYCHAIN USERDEFAULT (SAVE OBJECT COMPLEX)
-    private var sessionId : SessionId?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
             user = User(username: usuario, password: contraseña, request_token: token)
            
 //}))
+
         let userViewModel = UserViewModel()
         userViewModel.Login(user: user!) { result, data in
             DispatchQueue.main.async {
@@ -95,7 +96,13 @@ class ViewController: UIViewController {
             //self.sessionId = object1
         //}
     //}
-  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetalleMovie"{
+            var perfil = segue.destination as? PerfilViewController
+            perfil?.requestToken = self.requestToken?.request_token
+          }
+       }
 
 }
+
 

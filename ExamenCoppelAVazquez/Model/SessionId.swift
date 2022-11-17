@@ -8,5 +8,5 @@
 import Foundation
 struct SessionId: Decodable {
     let success: Bool
-    let sessionID: String
+    let session_id: String
 }

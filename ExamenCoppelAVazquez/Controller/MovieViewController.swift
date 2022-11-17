@@ -13,6 +13,11 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var Popular: UIButton!
+    
+    @IBOutlet weak var TopRated: UIButton!
+    
+    
     private var movieViewModel = MovieViewModel()
     private var movies : Movies?
     private var movie : [Movie] = []
@@ -21,6 +26,13 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        movieViewModel.GetPopularMovie { movies, error in
+            self.Popular.backgroundColor = UIColor.lightGray
+            self.movies = movies
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -35,6 +47,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
                 self.collectionView.reloadData()
             }
         }
+        self.Popular.backgroundColor = UIColor.lightGray
+        self.TopRated.backgroundColor = UIColor.white
     }
     
     @IBAction func GetMovieTopRated(_ sender: UIButton) {
@@ -44,6 +58,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate{
                 self.collectionView.reloadData()
             }
         }
+        self.TopRated.backgroundColor = UIColor.lightGray
+        self.Popular.backgroundColor = UIColor.white
     }
     
 }
