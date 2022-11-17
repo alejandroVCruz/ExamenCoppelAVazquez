@@ -1,10 +1,3 @@
-//
-//  PostLogin.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by Digis01 Soluciones Digitales on 12/11/22.
-//
-
 import Foundation
 
 class UserViewModel {

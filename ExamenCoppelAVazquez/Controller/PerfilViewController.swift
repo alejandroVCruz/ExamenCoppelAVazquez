@@ -1,10 +1,3 @@
-//
-//  PerfilViewController.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by MacBookMBA3 on 16/11/22.
-//
-
 import UIKit
 
 class PerfilViewController: UIViewController, UICollectionViewDelegate {
@@ -26,7 +19,8 @@ class PerfilViewController: UIViewController, UICollectionViewDelegate {
     //---------------------------------------------------------
     private var perfil : Perfil?
     private var IdSession : String?
-    
+    //-------------------------------------------------------
+    private var perfilViewModel = PerfilViewModel()
     //--------------------------------------------------------
     private var movieViewModel = MovieViewModel()
     private var movies : Movies?
@@ -35,9 +29,6 @@ class PerfilViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
-        
-        
     }
     
     func loadData(){
@@ -49,10 +40,8 @@ class PerfilViewController: UIViewController, UICollectionViewDelegate {
         }
         idUser = Session(request_token: token)
         let sessionIdViewModel = SessionIdViewModel()
-        //print(perfil.requestToken)
         sessionIdViewModel.PostSessionId(requestToken: idUser!) { sessionId, error in
             DispatchQueue.main.async{
-            //validar Succes y si es true //Realizar segues a view movies
                 
                 self.IdSession = sessionId?.session_id
                 
@@ -60,27 +49,30 @@ class PerfilViewController: UIViewController, UICollectionViewDelegate {
                 
         }
         }
-        //sessionIdViewModel.PostSessionId(idSession:  IdSession!) { result, data in
 
         
     }
     func loadData2(){
         //---------------------------------------------------------------------------------
-            movieViewModel.GetFavoriteMovies(idSession: IdSession!) { movies, error in
-                self.perfil = movies
+        perfilViewModel.GetDetail(idSession: IdSession!) { perfil, error in
+                self.perfil = perfil
                 DispatchQueue.main.async {
                     self.Nombre.text = self.perfil?.name
                     self.Usuario.text = self.perfil?.username
-                    
-                    //3er servicio de favoritos
-                   
+                    self.loadData3()
                 }
             }
-        
     }
     
     func loadData3(){
-        self.collectionView.reloadData()
+        movieViewModel.GetFavoriteMovies(idSession: IdSession!) { Movies, error in
+            self.movies = Movies
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        }
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -100,10 +92,10 @@ extension PerfilViewController : UICollectionViewDataSource{
         movies?.results?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        self.performSegue(withIdentifier: "DetalleMovie", sender: self)
-        return true
-    }
+//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//        self.performSegue(withIdentifier: "DetalleMovie", sender: self)
+//        return true
+//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell

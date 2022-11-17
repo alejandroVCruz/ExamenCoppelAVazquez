@@ -1,14 +1,6 @@
-//
-//  DetailsMovie.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by MacBookMBA3 on 15/11/22.
-//
-
 import Foundation
 
 class DetailsMovie {
-    //TODOS Métodos referentes a Movies
     func GetDetailMovie(idMovie: Int , moviedetail : @escaping (Movie , Error?) -> Void){
             let urlSession = URLSession.shared
             let decoder = JSONDecoder()
@@ -18,7 +10,6 @@ class DetailsMovie {
                 
                 if let data = data {
                     let json = try? JSONSerialization.jsonObject(with: data)
-//                    print(String(describing: json))
                     let movie = try! decoder.decode(Movie.self, from: data)
                     moviedetail(movie, nil)
                 }

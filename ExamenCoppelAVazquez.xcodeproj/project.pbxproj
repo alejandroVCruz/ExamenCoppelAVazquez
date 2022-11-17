@@ -25,7 +25,6 @@
 		EFFC90C62922AA3B00F9BE25 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90C52922AA3B00F9BE25 /* User.swift */; };
 		EFFC90C82922AA3F00F9BE25 /* SessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90C72922AA3F00F9BE25 /* SessionId.swift */; };
 		EFFC90CC2922AA5400F9BE25 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90CB2922AA5400F9BE25 /* UserViewModel.swift */; };
-		EFFC90CE2922AA5A00F9BE25 /* GetGuestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90CD2922AA5A00F9BE25 /* GetGuestSession.swift */; };
 		EFFC90D02922AA5F00F9BE25 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90CF2922AA5F00F9BE25 /* MovieCollectionViewCell.swift */; };
 		EFFC90D22922AA6400F9BE25 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFFC90D12922AA6400F9BE25 /* MovieCollectionViewCell.xib */; };
 		EFFC90D42922AA6B00F9BE25 /* CompaniasProductorasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC90D32922AA6B00F9BE25 /* CompaniasProductorasCell.swift */; };
@@ -57,7 +56,6 @@
 		EFFC90C52922AA3B00F9BE25 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EFFC90C72922AA3F00F9BE25 /* SessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionId.swift; sourceTree = "<group>"; };
 		EFFC90CB2922AA5400F9BE25 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		EFFC90CD2922AA5A00F9BE25 /* GetGuestSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGuestSession.swift; sourceTree = "<group>"; };
 		EFFC90CF2922AA5F00F9BE25 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFFC90D12922AA6400F9BE25 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		EFFC90D32922AA6B00F9BE25 /* CompaniasProductorasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniasProductorasCell.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				EFFC90CB2922AA5400F9BE25 /* UserViewModel.swift */,
-				EFFC90CD2922AA5A00F9BE25 /* GetGuestSession.swift */,
 				EFFC90CF2922AA5F00F9BE25 /* MovieCollectionViewCell.swift */,
 				EFFC90D12922AA6400F9BE25 /* MovieCollectionViewCell.xib */,
 				EFFC90D32922AA6B00F9BE25 /* CompaniasProductorasCell.swift */,
@@ -231,7 +228,6 @@
 				EFFC90DC2922AA9E00F9BE25 /* SessionIdViewModel.swift in Sources */,
 				EFD01B6C291EE45700F10DD2 /* ViewController.swift in Sources */,
 				EFFC90C42922AA2E00F9BE25 /* RequestToken.swift in Sources */,
-				EFFC90CE2922AA5A00F9BE25 /* GetGuestSession.swift in Sources */,
 				EFFA634029258E13006A7533 /* PerfilViewModel.swift in Sources */,
 				EFFC90D02922AA5F00F9BE25 /* MovieCollectionViewCell.swift in Sources */,
 				EFD01B68291EE45700F10DD2 /* AppDelegate.swift in Sources */,

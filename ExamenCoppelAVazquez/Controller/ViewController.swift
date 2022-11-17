@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by MacBookMBA3 on 11/11/22.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,34 +13,26 @@ class ViewController: UIViewController {
     private var requestTokenViewModel = RequestTokenViewModel()
     
     
-    private var requestToken : RequestToken?  // TODO PROYECTO - NECESITA SER GUARDADO EN UN KEYCHAIN USERDEFAULT (SAVE OBJECT COMPLEX)
+    private var requestToken : RequestToken?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         GenerarToken()
-        //GenerarId()
     }
     
     
     @IBAction func Ingresar(_ sender: Any) {
-//        let alert = UIAlertController(title: "Enviar datos", message: "Se enviara la informacion", preferredStyle: .alert)
          var user : User?
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
-//            action in
             guard let usuario = self.Usuario.text else {print("Usuario no valido"); return}
             guard let contraseña = self.Contraseña.text else {print("Contraseña no valida"); return}
             guard let token = self.requestToken?.request_token else{return}
             
             user = User(username: usuario, password: contraseña, request_token: token)
-           
-//}))
 
         let userViewModel = UserViewModel()
         userViewModel.Login(user: user!) { result, data in
             DispatchQueue.main.async {
-                //validar Succes y si es true //Realizar segues a view movies
         
                 if userViewModel.requestToken.success {
                     let alert = UIAlertController(title: "DATOS CORRECTOS", message: "BIENVENIDO", preferredStyle: UIAlertController.Style.alert)
@@ -75,32 +60,11 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK: - User actions
-    //-------------------------------------------------------------------------------------------------------------------------------------------
     @IBAction func MostrarContrasena(_ sender: UIButton) {
         BotonMostrarContraseña.isSelected = !BotonMostrarContraseña.isSelected
         Contraseña.isSecureTextEntry = !BotonMostrarContraseña.isSelected
     
     }
-
-
-    //-------------------------------------------------------------------------------------------------------------------------------------------
-   // func GenerarId(){
-       // sessionIdViewModel.GetSessionId { object1, error in
-         //   guard let _ = object1 else {
-           //     print("Error")
-             //   return
-           // }
-            //self.sessionId = object1
-        //}
-    //}
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MOVIE"{
-            //var movieViewController = segue.destination as? MovieViewController
-            //movieViewController?.requestToken = self.requestToken?.request_token
-          }
-       }
-
 }
 
 	

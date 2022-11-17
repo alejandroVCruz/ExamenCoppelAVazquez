@@ -1,10 +1,3 @@
-//
-//  DetallesMovieViewController.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by MacBookMBA3 on 15/11/22.
-//
-
 import UIKit
 
 class DetallesMovieViewController: UIViewController {

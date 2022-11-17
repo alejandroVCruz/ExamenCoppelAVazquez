@@ -1,10 +1,3 @@
-//
-//  Movie.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by MacBookMBA3 on 11/11/22.
-//
-
 import Foundation
 
 struct Movies: Codable {

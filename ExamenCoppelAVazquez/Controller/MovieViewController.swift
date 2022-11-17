@@ -1,10 +1,3 @@
-//
-//  MovieCollectionViewController.swift
-//  ExamenCoppelAVazquez
-//
-//  Created by Digis01 Soluciones Digitales on 12/11/22.
-//
-
 import UIKit
 
 private let reuseIdentifier = "Cell"
@@ -109,14 +102,5 @@ extension MovieViewController : UICollectionViewDataSource{
             detalleMovieController?.IdMovie = self.idMovie!
           }
        }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let indexPath = collectionView.indexPathsForSelectedItems{//indexPathForSelectedRow{
-//            let selectedRow = indexPath.row
-//            let detailVC = segue.destination as! ParkDetailTable
-//            detailVC.park = self.parksArray[selectedRow]
-//        }
-//    }
-
 }
 
